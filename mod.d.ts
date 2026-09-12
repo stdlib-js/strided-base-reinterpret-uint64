@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { Uint64Array } from '@stdlib/types/array';
 
 /**
-* Reinterpret a `Uint64Array` as a `Uint32Array` of interleaved high and low words.
+* Reinterprets a `Uint64Array` as a `Uint32Array` of interleaved high and low words.
 *
-* @module @stdlib/strided-base-reinterpret-uint64
+* @param x - input array
+* @param offset - starting index
+* @returns `Uint32Array` view
 *
 * @example
 * var Uint64Array = require( '@stdlib/array-uint64' );
-* var reinterpret = require( '@stdlib/strided-base-reinterpret-uint64' );
 *
 * var x = new Uint64Array( 10 );
 *
@@ -33,14 +38,10 @@
 * // returns <Uint32Array>
 *
 * var bool = ( out.buffer === x.buffer );
-* // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function reinterpret( x: Uint64Array, offset: number ): Uint32Array;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = reinterpret;
